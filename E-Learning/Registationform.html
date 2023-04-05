@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SIGN UP</title>
+	<script>
+		function formvalidation()
+		{
+			var name=document.forms["RegForm"]["empname"];
+			var email=document.forms["RegForm"]["Email"];
+			var phone=document.forms["RegForm"]["Telephone"];
+			var what=document.forms["RegForm"]["Subject"];
+			var password=document.forms["RegForm"]["Password"];
+			var address=document.forms["RegForm"]["Address"];
+
+			if(name.value=="")
+			{
+				window.alert("please enter your name:");
+				name.focus();
+				return false;
+			}
+
+			if (address.value=="")
+			{
+				window.alert("please enter your address:");
+				address.focus();
+				return false;
+			}
+			if(email.value=="")
+			{
+				window.alert("enter a valid e-mail address.");
+				email.focus();
+				return false;
+
+			}
+			if(email.value.indexOf("@",0)<0)
+			{
+				window.alert("please enter correct e-mail address. ");
+				email.focus();
+				return false;
+			}
+			if(phone.value=="")
+				{
+					window.alert("please enter contact number:");
+			        phone.focus();
+			        return false;
+				}
+
+			if(what.selectedIndex<0)
+			{
+				alert("please enter your course.");
+				what.focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body background="B.jpg">
+<center>
+	<h1>SIGN UP</h1>
+	<form name="RegForm" onsubmit=return"formvalidation()">
+		<p>Username:  <input type="text" size="20" name="empname"> </p><br>
+		<p>Address:  <input type="text" size="20" name="Address"></p><br>
+		<p>E-mail:  <input type="text" size="20" name="Email"></p><br>
+		<p>Password:  <input type="password" size="20" name="password"></p><br>
+		<p>Telephone:  <input type="number" size="20" name="Telephone"></p><br>
+
+		<p>SELECT YOUR COURSE:
+			<select type="text" value="" name="Subject">
+				<option>Select</option>
+				<option>BSC-IT</option>
+				<option>BSC-CS</option>
+				<option>BCA</option>
+				<option>MSC-IT</option>
+				<option>MSC-CS</option>
+			</select>
+		</p><br><br>
+		<p>COMMENT:<textarea row="2" cols="30" name="Comment"></textarea> </p>
+		<p><input type="submit" value="send" name="submit">
+			<input type="reset" value="Reset" name="Reset">
+
+		</p>
+		<style type="text/css">
+			body{
+				background-position: left;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			h2{
+				color: yellow;
+				font-size: 30px;
+			}
+			p{
+				color: black;
+				font-size: 15px;
+				font-style: bold;
+
+			}
+			
+		</style>
+		
+	</form>
+</center>
+</body>
+</html>
